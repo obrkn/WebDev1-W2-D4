@@ -61,31 +61,42 @@ section {
   margin-left: 40px;
 }
 
-#first .wrapper {
+#first div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#first div .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
-
+  margin-top: 40px;
 }
 
-#first .wrapper h1 {
+#first div .wrapper h1 {
   font-size: 144px;
   font-family: var(--header-font);
   color: var(--base-color);
   text-align: center;
 }
 
-#first .wrapper p {
+#first div .wrapper p {
   font-size: 20px;
-  color: var(--secondary-color);
+  color: var(--nav-text-color);
   text-align: center;
+  position: relative;
 }
 
-#first .wrapper p hr{
-  width: 63px;
-  color: var(--secondary-color);
+#first div .wrapper p::before {
+  content: "";
+  width: 90px;
+  border: 1px solid var(--nav-text-color);
+  position: absolute;
+  top: 50%;
+  left: -70px;
+  transform: translateX(-50%);
 }
 
 section#second {
